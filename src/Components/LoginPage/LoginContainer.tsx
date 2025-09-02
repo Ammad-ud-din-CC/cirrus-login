@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 "use client";
 import { EuiFlexGroup, EuiFlexItem } from "@elastic/eui";
-import React from "react";
 import LoginForm from "./LoginForm";
 import Image from "next/image";
 
@@ -18,7 +17,7 @@ const Login = () => {
         minHeight: "100vh",
         overflow: "clip",
         width: "100%",
-        gap: 7,
+        gap: 0,
       }}
     >
       {/* LEFT ITEM WITH GRADIENT */}

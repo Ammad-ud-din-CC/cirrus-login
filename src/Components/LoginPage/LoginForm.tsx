@@ -23,8 +23,9 @@ const sharedInputStyles = css`
   }
 
   &:focus {
+    outline: none;
     background: rgba(223, 226, 232, 0.4);
-    box-shadow: 0 0 0 2px #20567e;
+    box-shadow: 0 0 0 2px rgba(32, 86, 126, 0.4);
   }
 `;
 
@@ -62,8 +63,6 @@ export default function LoginForm() {
       setError("An error occurred: Email and Password are required.");
     } else {
       setError("");
-      // Proceed with login logic here
-      console.log("Logging in with:", mail, pass);
     }
   };
 
@@ -88,6 +87,7 @@ export default function LoginForm() {
         style={{
           width: "100%",
           fontSize: "12px",
+
           display: "flex",
           flexDirection: "column",
           padding: "20px",
