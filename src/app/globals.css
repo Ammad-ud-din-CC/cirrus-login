@@ -35,6 +35,18 @@ a {
   text-decoration: none;
 }
 
+.metropolis {
+  font-family: var(--font-metropolis);
+}
+
+.euiIcon {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.euiFieldPassword__toggle {
+  color: #ff5733;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
