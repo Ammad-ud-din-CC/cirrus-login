@@ -39,6 +39,10 @@ a {
   font-family: var(--font-metropolis);
 }
 
+input {
+  font-family: Arial !important;
+}
+
 .euiIcon {
   color: rgba(0, 0, 0, 0.7) !important;
 }
