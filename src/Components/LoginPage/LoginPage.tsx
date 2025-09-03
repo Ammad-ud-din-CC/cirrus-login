@@ -202,7 +202,7 @@ const Login = () => {
             paddingSize="l"
             css={css`
               width: 300px;
-              @media (max-width: 800px) {
+              @media (max-width: 950px) {
                 width: 270px;
               }
               border-radius: 12px;
