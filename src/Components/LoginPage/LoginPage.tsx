@@ -22,7 +22,6 @@ import {
   errorBoxStyles,
   formRowStyles,
   loginContainer,
-  loginFormContainer,
   loginFormTitle,
   loginItemLeft,
   loginItemRight,
@@ -72,8 +71,12 @@ const Login = () => {
         >
           <EuiPanel
             grow={false}
+            hasBorder={false}
+            hasShadow={true}
+            paddingSize="l"
             css={css`
               width: 50%;
+              border-radius: 12px;
             `}
           >
             {/* ------------------------------------------------------------ Error message */}
@@ -96,11 +99,7 @@ const Login = () => {
             )}
 
             {/* ------------------------------------------------------------ FORM CONTAINER */}
-            <EuiForm
-              component="form"
-              css={loginFormContainer}
-              onSubmit={handleSubmit}
-            >
+            <EuiForm component="form" onSubmit={handleSubmit}>
               <EuiFlexGroup
                 justifyContent="center"
                 direction="column"

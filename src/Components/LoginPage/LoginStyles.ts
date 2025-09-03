@@ -48,15 +48,6 @@ export const CirrusLogoImage = css`
 
 // --------------------------- FORM STYLES
 
-//  FORM CONTAINER
-
-export const loginFormContainer = css`
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: white;
-`;
-
 // FORM TITLE
 
 export const loginFormTitle = css`
