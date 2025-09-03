@@ -69,6 +69,25 @@ const Login = () => {
           alignItems="center"
           justifyContent="center"
         >
+          {/* ------------------------------------------------------------ Error message */}
+          {error && (
+            <EuiFlexGroup
+              alignItems="center"
+              justifyContent="flexStart"
+              css={errorBoxStyles}
+            >
+              <AiOutlineClose
+                css={css`
+                  &:hover {
+                    cursor: pointer;
+                  }
+                `}
+                onClick={() => setError("")}
+              />{" "}
+              {error}
+            </EuiFlexGroup>
+          )}
+
           <EuiPanel
             grow={false}
             hasBorder={false}
@@ -79,25 +98,6 @@ const Login = () => {
               border-radius: 12px;
             `}
           >
-            {/* ------------------------------------------------------------ Error message */}
-            {error && (
-              <EuiFlexGroup
-                alignItems="center"
-                justifyContent="flexStart"
-                css={errorBoxStyles}
-              >
-                <AiOutlineClose
-                  css={css`
-                    &:hover {
-                      cursor: pointer;
-                    }
-                  `}
-                  onClick={() => setError("")}
-                />{" "}
-                {error}
-              </EuiFlexGroup>
-            )}
-
             {/* ------------------------------------------------------------ FORM CONTAINER */}
             <EuiForm component="form" onSubmit={handleSubmit}>
               <EuiFlexGroup
