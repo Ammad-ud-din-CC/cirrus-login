@@ -50,6 +50,9 @@ const Login = () => {
       rgba(10, 50, 87, 0.2),
       rgba(10, 50, 87, 1)
     );
+    @media (max-width: 767px) {
+      display: none;
+    }
   `;
 
   const overlayRectangle = css`
@@ -96,7 +99,6 @@ const Login = () => {
     padding: 8px;
     border: 1px solid #d2d9e1;
     border-radius: 6px;
-    width: 100%;
     color: #000000;
     ::placeholder {
       color: rgba(0, 0, 0, 0.7);
@@ -121,10 +123,10 @@ const Login = () => {
   const loginSubmitButton = css`
     background: #20567e;
     font-size: 12px;
-    width: 50%;
+    width: 66%;
     padding: 8px;
     color: white;
-    transform: translateX(50%);
+    margin: 0 auto;
     border: none;
     &:hover {
       filter: brightness(1.25);
@@ -223,6 +225,7 @@ const Login = () => {
                 {/* EMAIL */}
                 <EuiFormRow css={formRowStyles} label="Email">
                   <EuiFieldText
+                    fullWidth
                     css={sharedInputStyles}
                     placeholder="Enter your Email"
                     value={mail}
@@ -234,6 +237,7 @@ const Login = () => {
                 {/* PASSWORD */}
                 <EuiFormRow css={formRowStyles} label="Password">
                   <EuiFieldPassword
+                    fullWidth
                     css={sharedInputStyles}
                     placeholder="Enter your Password"
                     value={pass}
