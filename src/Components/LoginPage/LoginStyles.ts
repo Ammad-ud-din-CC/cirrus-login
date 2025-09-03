@@ -1,20 +1,18 @@
-/* ------------------------------------------------------ CONTAINER */
+import { css } from "@emotion/react";
 
-#loginContainer {
+// ------------------------------------------------------------- CONTAINER
+
+export const loginContainer = css`
+  height: 100vh;
   background: url("/LoginPage/LoginBg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
-  overflow: clip;
-  width: 100vw;
-  gap: 0;
-}
+`;
 
-#loginItemLeft {
-  width: 100%;
-  max-width: 60%;
-  height: 100vh;
+// ------------------------------------------------------------- LEFT ITEMS
+
+export const loginItemLeft = css`
   position: relative;
   background: linear-gradient(
     180deg,
@@ -22,9 +20,9 @@
     rgba(10, 50, 87, 0.2),
     rgba(10, 50, 87, 1)
   );
-}
+`;
 
-#loginItemLeft #overlayRectangle {
+export const overlayRectangle = css`
   position: absolute;
   left: 0;
   bottom: 0;
@@ -33,46 +31,44 @@
   width: 400px;
   height: 350px;
   filter: blur(100px);
-}
+`;
 
-#loginItemRight {
+// ------------------------------------------------------------- RIGHT ITEMS
+
+export const loginItemRight = css`
   position: relative;
-  max-width: 40%;
-  height: 100vh;
   background: rgba(255, 255, 255, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+`;
 
-#loginItemRight #CirrusLogoImage {
+export const CirrusLogoImage = css`
   position: absolute;
   top: 20px;
   left: calc(50% - 150px);
-}
+`;
 
-/* ------------------------------------------------------ INPUT STYLES */
+// --------------------------- FORM STYLES
 
-#loginFormContainer {
-  width: 100%;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
+//  FORM CONTAINER
+
+export const loginFormContainer = css`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: white;
-}
+`;
 
-#loginFormContainer h1 {
-  font-size: 32px;
+// FORM TITLE
+
+export const loginFormTitle = css`
+  font-family: "Metropolis";
   text-align: center;
   color: #414141ff;
-  padding-bottom: 10px;
   font-weight: 300;
-}
+`;
 
-#sharedInputStyles {
+// FORM INPUT FIELDS STYLES
+
+export const sharedInputStyles = css`
   font-size: 12px;
   background: transparent;
   outline: none;
@@ -90,22 +86,35 @@
     background: rgba(223, 226, 232, 0.4);
     box-shadow: 0 0 0 2px rgba(32, 86, 126, 0.4);
   }
-}
+`;
 
-#formRowStyles {
+// FORM ROW
+
+export const formRowStyles = css`
+  font-family: "Metropolis";
   font-size: 12px !important;
-}
+`;
 
-#formRowStyles label.euiFormLabel {
-  font-size: 12px !important;
-  font-weight: 500;
-}
+// SUBMIT BUTTON
 
-#errorBoxStyles {
+export const loginSubmitButton = css`
+  background: #20567e;
+  font-size: 12px;
+  width: 50%;
+  padding: 8px;
+  color: white;
+  transform: translateX(50%);
+  border: none;
+  &:hover {
+    filter: brightness(1.25);
+    background: #20567e;
+  }
+`;
+
+// ERROR BOX
+
+export const errorBoxStyles = css`
   position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   top: 10px;
   right: 10px;
   background: #ff4d4f;
@@ -115,18 +124,4 @@
   font-size: 14px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-}
-
-#loginSubmitButton {
-  background: #20567e;
-  font-size: 12px;
-  width: 50%;
-  padding: 8px;
-  color: white;
-  transform: translateX(50%);
-  border: none;
-}
-#loginSubmitButton:hover {
-  filter: brightness(1.25);
-  background: #20567e;
-}
+`;
