@@ -14,13 +14,14 @@ import {
   EuiSpacer,
   EuiTitle,
 } from "@elastic/eui";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Login = () => {
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
+  const passwordRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const Login = () => {
 
   const loginContainer = css`
     height: 100vh;
-    background: url("/LoginPage/LoginBg.jpg");
+    background: url("/LoginPage/LoginBg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -44,26 +45,9 @@ const Login = () => {
   // ------------------------------------------------------------- LEFT ITEMS
 
   const loginItemLeft = css`
-    background: linear-gradient(
-      180deg,
-      rgba(10, 50, 87, 0),
-      rgba(10, 50, 87, 0.2),
-      rgba(10, 50, 87, 1)
-    );
     @media (max-width: 767px) {
       display: none;
     }
-  `;
-
-  const overlayRectangle = css`
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: rgba(10, 50, 87, 1);
-    opacity: 0.7;
-    width: 400px;
-    height: 350px;
-    filter: blur(100px);
   `;
 
   // ------------------------------------------------------------- RIGHT ITEMS
@@ -76,7 +60,7 @@ const Login = () => {
   const CirrusLogoImage = css`
     position: absolute;
     top: 20px;
-    left: calc(50% - 150px);
+    left: calc(50% - 90px);
   `;
 
   // --------------------------- FORM STYLES
@@ -157,9 +141,7 @@ const Login = () => {
       gutterSize="none"
     >
       {/* ------------------------------------------------------------ LEFT ITEM WITH GRADIENT */}
-      <EuiFlexItem css={loginItemLeft} grow={6}>
-        <EuiPanel css={overlayRectangle} paddingSize="none" />
-      </EuiFlexItem>
+      <EuiFlexItem css={loginItemLeft} grow={6}></EuiFlexItem>
 
       {/* ------------------------------------------------------------ RIGHT ITEM WITH FORM */}
       <EuiFlexItem css={loginItemRight} grow={4}>
@@ -167,8 +149,8 @@ const Login = () => {
           css={CirrusLogoImage}
           src={"/LoginPage/CirrusAILogo.png"}
           alt="Cirrus AI Logo"
-          width={300}
-          height={100}
+          width={180}
+          height={60}
         />
         <EuiFlexGroup
           direction="column"
@@ -201,7 +183,7 @@ const Login = () => {
             hasShadow={true}
             paddingSize="l"
             css={css`
-              width: 300px;
+              width: 350px;
               @media (max-width: 950px) {
                 width: 270px;
               }
@@ -239,11 +221,12 @@ const Login = () => {
                   <EuiFieldPassword
                     fullWidth
                     css={sharedInputStyles}
+                    style={{ paddingLeft: "40px" }}
                     placeholder="Enter your Password"
                     value={pass}
                     onChange={(e) => setPass(e.target.value)}
                     aria-label="Password input"
-                    style={{ paddingLeft: "40px" }}
+                    inputRef={passwordRef}
                   />
                 </EuiFormRow>
 
