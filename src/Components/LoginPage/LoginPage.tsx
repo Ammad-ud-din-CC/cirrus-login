@@ -39,7 +39,7 @@ const Login = () => {
     background: url("/LoginPage/LoginBg.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: end;
   `;
 
   // ------------------------------------------------------------- LEFT ITEMS
@@ -54,13 +54,13 @@ const Login = () => {
 
   const loginItemRight = css`
     position: relative;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.57);
   `;
 
   const CirrusLogoImage = css`
     position: absolute;
-    top: 20px;
-    left: calc(50% - 90px);
+    top: 48px;
+    left: calc(50% - 100px);
   `;
 
   // --------------------------- FORM STYLES
@@ -91,7 +91,7 @@ const Login = () => {
     &:focus {
       outline: none;
       background: rgba(223, 226, 232, 0.4);
-      box-shadow: 0 0 0 2px rgba(32, 86, 126, 0.4);
+      box-shadow: 0px 2px 0px 0px rgba(32, 86, 126, 1);
     }
   `;
 
@@ -106,8 +106,9 @@ const Login = () => {
 
   const loginSubmitButton = css`
     background: #20567e;
+    border-radius: 6px;
     font-size: 12px;
-    width: 66%;
+    width: 50%;
     padding: 8px;
     color: white;
     margin: 0 auto;
@@ -149,7 +150,7 @@ const Login = () => {
           css={CirrusLogoImage}
           src={"/LoginPage/CirrusAILogo.png"}
           alt="Cirrus AI Logo"
-          width={180}
+          width={200}
           height={60}
         />
         <EuiFlexGroup
@@ -178,16 +179,18 @@ const Login = () => {
           )}
 
           <EuiPanel
+            color="subdued"
             grow={false}
             hasBorder={false}
             hasShadow={true}
             paddingSize="l"
             css={css`
-              width: 350px;
+              width: 376px;
               @media (max-width: 950px) {
                 width: 270px;
               }
               border-radius: 12px;
+              background-opacity: 0.8;
             `}
           >
             {/* ------------------------------------------------------------ FORM CONTAINER */}
