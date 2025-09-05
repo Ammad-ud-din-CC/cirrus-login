@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
 "use client";
 
-import { agentsColumns, metricsColumns } from "@/constants/Data";
+import { metricsColumns } from "@/constants/Data";
 import {
   EuiPanel,
-  EuiText,
   EuiFlexGroup,
   EuiFlexItem,
   EuiLink,

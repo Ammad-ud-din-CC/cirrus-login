@@ -28,7 +28,12 @@ const IssueList: React.FC<IssueListProps> = ({ issues }) => {
       hasShadow={false}
     >
       {issues.map((issue) => (
-        <div key={issue.id}>
+        <EuiPanel
+          paddingSize="none"
+          hasBorder={false}
+          hasShadow={false}
+          key={issue.id}
+        >
           <EuiPanel
             paddingSize="none"
             hasBorder={false}
@@ -81,7 +86,7 @@ const IssueList: React.FC<IssueListProps> = ({ issues }) => {
             />
           </EuiPanel>
           <EuiSpacer size="s" />
-        </div>
+        </EuiPanel>
       ))}
     </EuiPanel>
   );

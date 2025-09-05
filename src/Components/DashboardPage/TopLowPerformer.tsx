@@ -6,7 +6,6 @@ import {
   EuiFlexItem,
   EuiIcon,
   EuiImage,
-  EuiPanel,
   EuiSpacer,
   EuiText,
 } from "@elastic/eui";

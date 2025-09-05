@@ -23,7 +23,6 @@ import {
 } from "chart.js";
 import { chartData, timeRanges } from "@/constants/Data";
 
-// Register chart.js components
 ChartJS.register(
   LineElement,
   PointElement,

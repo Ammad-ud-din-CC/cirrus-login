@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { EuiIcon, EuiPanel, EuiTabbedContent } from "@elastic/eui";
+import { EuiPanel, EuiTabbedContent } from "@elastic/eui";
 import { tabsData } from "@/constants/Data";
 import { css } from "@emotion/react";
 
