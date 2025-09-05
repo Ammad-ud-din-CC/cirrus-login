@@ -1,0 +1,90 @@
+"use client";
+/** @jsxImportSource @emotion/react */ import {
+  EuiFlexGroup,
+  EuiFlexItem,
+  EuiPanel,
+  EuiProgress,
+  EuiSpacer,
+  EuiText,
+  EuiToolTip,
+} from "@elastic/eui";
+import { css } from "@emotion/react";
+
+interface Issue {
+  id: number;
+  text: string;
+  percentage: number;
+}
+interface IssueListProps {
+  issues: Issue[];
+}
+
+const IssueList: React.FC<IssueListProps> = ({ issues }) => {
+  return (
+    <EuiPanel
+      paddingSize="none"
+      grow={false}
+      hasBorder={false}
+      hasShadow={false}
+    >
+      {issues.map((issue) => (
+        <div key={issue.id}>
+          <EuiPanel
+            paddingSize="none"
+            hasBorder={false}
+            hasShadow={false}
+            grow={false}
+          >
+            <EuiFlexGroup justifyContent="spaceBetween" gutterSize="s">
+              <EuiFlexItem grow={1}>
+                <EuiToolTip content={issue.text} position="left">
+                  <div
+                    style={{
+                      fontSize: "11px",
+                      fontWeight: "300",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsi",
+                      display: "block",
+                      width: "260px",
+                      cursor: "default",
+                    }}
+                  >
+                    {issue.text}
+                  </div>
+                </EuiToolTip>
+              </EuiFlexItem>
+
+              <EuiFlexItem grow={false}>
+                <EuiText
+                  css={css`
+                    font-size: 11px;
+                    font-weight: 700;
+                  `}
+                >
+                  <p>{issue.percentage.toFixed(2)}%</p>
+                </EuiText>
+              </EuiFlexItem>
+            </EuiFlexGroup>
+
+            <EuiProgress
+              value={issue.percentage}
+              max={100}
+              color={
+                issue.percentage >= 70
+                  ? "#ff0000"
+                  : issue.percentage >= 40
+                  ? "primary"
+                  : "subdued"
+              }
+              size="s"
+            />
+          </EuiPanel>
+          <EuiSpacer size="s" />
+        </div>
+      ))}
+    </EuiPanel>
+  );
+};
+
+export default IssueList;

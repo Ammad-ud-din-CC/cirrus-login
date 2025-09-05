@@ -16,6 +16,7 @@ import {
 } from "@elastic/eui";
 import { useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const [mail, setMail] = useState("");
@@ -23,18 +24,23 @@ const Login = () => {
   const [error, setError] = useState("");
   const passwordRef = useRef<HTMLInputElement>(null);
 
+  const router = useRouter();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!mail || !pass) {
       setError("An error occurred: Email and Password are required.");
+    } else if (mail === "user@gmail.com" && pass === "User@123") {
+      router.push("/dashboard"); // ✅ works in Client Components
     } else {
-      setError("");
+      setError("An error occurred: email or password is wrong.");
     }
   };
 
   // ------------------------------------------------------------- CONTAINER
 
   const loginContainer = css`
+    font-family: var(--font-metropolis);
     height: 100vh;
     background: url("/LoginPage/LoginBg.png");
     background-size: cover;
@@ -68,7 +74,6 @@ const Login = () => {
   // FORM TITLE
 
   const loginFormTitle = css`
-    font-family: "Metropolis";
     text-align: center;
     color: #414141ff;
     font-weight: 300;
@@ -98,14 +103,14 @@ const Login = () => {
   // FORM ROW
 
   const formRowStyles = css`
-    font-family: "Metropolis";
     font-size: 12px !important;
   `;
 
   // SUBMIT BUTTON
 
   const loginSubmitButton = css`
-    background: #20567e;
+    font-family: var(--font-metropolis);
+    background: var(--primary);
     border-radius: 6px;
     font-size: 12px;
     width: 50%;
@@ -115,7 +120,7 @@ const Login = () => {
     border: none;
     &:hover {
       filter: brightness(1.25);
-      background: #20567e;
+      background: var(--primary);
     }
   `;
 
@@ -186,7 +191,7 @@ const Login = () => {
             paddingSize="l"
             css={css`
               width: 376px;
-              @media (max-width: 950px) {
+              @media (max-width: 1200px) {
                 width: 270px;
               }
               border-radius: 12px;
