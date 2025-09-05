@@ -41,7 +41,7 @@ const rowStyle = css`
   &:last-of-type {
     border-bottom: none;
   }
-  &:nth-of-type(odd) {
+  &:nth-of-type(even) {
     background: #f1f1f0;
   }
 `;
