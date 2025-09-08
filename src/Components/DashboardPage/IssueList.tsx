@@ -80,13 +80,7 @@ const IssueList: React.FC<IssueListProps> = ({ issues }) => {
             <EuiProgress
               value={issue.percentage}
               max={100}
-              color={
-                issue.percentage >= 70
-                  ? "#ff0000"
-                  : issue.percentage >= 40
-                  ? "primary"
-                  : "subdued"
-              }
+              color={"#ff0000"}
               size="s"
             />
           </EuiPanel>

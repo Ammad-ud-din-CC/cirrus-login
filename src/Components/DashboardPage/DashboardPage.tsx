@@ -30,7 +30,7 @@ const DashboardPage = () => {
         size="m"
         className="metropolis"
         css={css({
-          fontWeight: 500,
+          fontWeight: 600,
         })}
       >
         <h1>Dashboard</h1>
