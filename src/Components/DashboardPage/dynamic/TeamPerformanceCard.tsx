@@ -45,9 +45,9 @@ const TeamPerformanceCard: React.FC<TeamPerformanceCardProps> = ({
         <p>Lead By: {lead}</p>
         <p>
           Performance:{" "}
-          <b style={{ fontWeight: 400, color: performanceColor }}>
+          <span style={{ fontWeight: 500, color: performanceColor }}>
             {performance}
-          </b>
+          </span>
         </p>
       </EuiText>
     </EuiPanel>
