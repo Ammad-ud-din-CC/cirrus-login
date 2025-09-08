@@ -306,3 +306,74 @@ export const chartData = {
     },
   ],
 };
+
+// -------------------------------------------------------- TEAM PERFORMANCE CARDS' GROUP
+
+export const TeamPerformance = [
+  {
+    id: 1,
+    company: "Fox Client Services",
+    lead: "Sheikh Umer",
+    performance: "80.95%",
+  },
+  {
+    id: 2,
+    company: "Fox Referral Source",
+    lead: "Rizwan Khalid",
+    performance: "80.87%",
+  },
+  {
+    id: 3,
+    company: "Phd Mils",
+    lead: "Amir Jalal",
+    performance: "80.62%",
+  },
+  {
+    id: 4,
+    company: "Fox Opphy",
+    lead: "Husnain Ali",
+    performance: "79.87%",
+  },
+  {
+    id: 5,
+    company: "Fox Welcome",
+    lead: "Danish Ali",
+    performance: "79.54%",
+  },
+  {
+    id: 6,
+    company: "Fox Poc",
+    lead: "Ahmed Qureshi",
+    performance: "78.72%",
+  },
+  {
+    id: 7,
+    company: "Phd Onion Rand",
+    lead: "Usman Ahmad",
+    performance: "78.67%",
+  },
+  {
+    id: 8,
+    company: "Fox Phd",
+    lead: "Syed Shah",
+    performance: "78.37%",
+  },
+  {
+    id: 9,
+    company: "Referral Source Specialist",
+    lead: "Husnain Ali",
+    performance: "77.03%",
+  },
+  {
+    id: 10,
+    company: "Phd Cch",
+    lead: "Usman Ahmad",
+    performance: "75.79%",
+  },
+  {
+    id: 11,
+    company: "FrontDesk-VA",
+    lead: "Dr Syed Zaman",
+    performance: "74.79%",
+  },
+];

@@ -19,6 +19,7 @@ import {
   EuiTitle,
 } from "@elastic/eui";
 import { css } from "@emotion/react";
+import TeamsPerformanceGroup from "./TeamsPerformanceGroup";
 
 const DashboardPage = () => {
   const gridColumns = css`
@@ -35,6 +36,10 @@ const DashboardPage = () => {
       >
         <h1>Dashboard</h1>
       </EuiTitle>
+
+      <EuiSpacer size="l" />
+
+      <TeamsPerformanceGroup />
 
       <EuiSpacer size="l" />
 
