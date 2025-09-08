@@ -130,6 +130,7 @@ const Login = () => {
     position: absolute;
     top: 10px;
     right: 10px;
+    color: white;
     background: #ff4d4f;
     padding: 10px 16px;
     border-radius: 6px;

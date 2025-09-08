@@ -20,6 +20,17 @@ interface IssueListProps {
 }
 
 const IssueList: React.FC<IssueListProps> = ({ issues }) => {
+  const issueListStyle = css`
+    font-size: 11px;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 260px;
+    cursor: default;
+  `;
+
   return (
     <EuiPanel
       paddingSize="none"
@@ -43,20 +54,14 @@ const IssueList: React.FC<IssueListProps> = ({ issues }) => {
             <EuiFlexGroup justifyContent="spaceBetween" gutterSize="s">
               <EuiFlexItem grow={1}>
                 <EuiToolTip content={issue.text} position="left">
-                  <div
-                    style={{
-                      fontSize: "11px",
-                      fontWeight: "300",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsi",
-                      display: "block",
-                      width: "260px",
-                      cursor: "default",
-                    }}
+                  <EuiPanel
+                    hasBorder={false}
+                    hasShadow={false}
+                    paddingSize="none"
+                    css={issueListStyle}
                   >
                     {issue.text}
-                  </div>
+                  </EuiPanel>
                 </EuiToolTip>
               </EuiFlexItem>
 
