@@ -51,7 +51,7 @@ const cellStyle = css`
 `;
 
 const scrollContainerStyle = css`
-  max-height: 400px;
+  max-height: 380px;
   overflow-y: auto;
 `;
 
