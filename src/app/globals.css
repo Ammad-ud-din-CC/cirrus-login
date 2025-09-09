@@ -1,9 +1,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #20567e;
+  --secondary: #63b3e7;
+  --tertiary: #dcf2ff;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -30,13 +33,28 @@ body {
   margin: 0;
 }
 
+/* FONTS */
+.metropolis {
+  font-family: var(--font-metropolis);
+}
+
+/* COLORS */
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-tertiary {
+  color: var(--tertiary);
+}
+
 a {
   color: inherit;
   text-decoration: none;
-}
-
-.metropolis {
-  font-family: var(--font-metropolis);
 }
 
 input {
@@ -44,21 +62,84 @@ input {
   font-family: Arial !important;
 }
 
-.euiIcon {
-  color: rgba(0, 0, 0, 0.7) !important;
-}
-
-.euiFieldPassword__toggle {
-  color: #ff5733;
-}
-
 label.euiFormLabel {
   font-size: 12px !important;
   font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+input .euiIcon {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* TABS CUSTOM CSS */
+
+.euiTabs {
+  justify-content: space-between;
+  border-radius: 8px;
+  background: #fb9845;
+  box-shadow: none !important;
+}
+
+.euiTab__content {
+  font-size: 12px !important;
+  text-wrap-mode: nowrap;
+}
+
+.euiTabs .euiTab {
+  gap: 0px !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0 12px;
+  border: 2px solid #fb9845;
+}
+
+.euiTabs > :not(.eui-isSelected) {
+  border-radius: 8px;
+  width: 50%;
+  background-color: white;
+  color: #000;
+}
+
+.euiTabs .euiTab-isSelected {
+  border-radius: 8px;
+  width: 50%;
+  background-color: #fb9845;
+  color: white;
+}
+
+/* TABLE CUSTOM CSS */
+
+.rowPeriod {
+  font-weight: 600;
+}
+/* RECHARTS GRAPHS CUSTOMCSS */
+
+.euiButtonGroup {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.euiButtonGroup__buttons {
+  border: none !important;
+  gap: 20px;
+}
+
+.euiButtonGroupButton {
+  font-size: 14px !important;
+  color: var(--secondary) !important;
+  border: none !important;
+}
+
+.euiButtonGroup__buttons > :not(.euiButtonGroupButton-isSelected) {
+  background: none !important;
+}
+
+.euiButtonGroup__buttons > .euiButtonGroupButton-isSelected {
+  background: var(--tertiary) !important;
+}
+
+.euiButtonGroup__buttons > :not(.euiButtonGroupButton-isSelected) {
+  color: var(--secondary);
+  font-weight: 500;
 }
